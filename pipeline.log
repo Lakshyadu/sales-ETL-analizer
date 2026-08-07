@@ -1,0 +1,15 @@
+2026-07-11 00:45:17,788 | INFO     | pipeline | === Starting pipeline run: adventureworks_sales_pipeline ===
+2026-07-11 00:45:17,790 | INFO     | src.extract | Downloading source file from https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/sales.csv
+2026-07-11 00:45:19,136 | INFO     | src.extract | Source download succeeded, cached snapshot updated at data/raw/sales_raw.csv
+2026-07-11 00:45:19,234 | INFO     | src.extract | Extracted 32718 raw rows, 9 columns
+2026-07-11 00:45:19,283 | INFO     | src.transform | Built star schema: 12427 customers, 130 products, 914 dates, 32718 fact rows
+2026-07-11 00:45:19,291 | INFO     | src.data_quality | Data quality checks passed: 32718 fact rows, 0 orphaned keys
+2026-07-11 00:45:19,353 | INFO     | src.load | Loaded 12427 rows into table 'dim_customer'
+2026-07-11 00:45:19,356 | INFO     | src.load | Loaded 130 rows into table 'dim_product'
+2026-07-11 00:45:19,363 | INFO     | src.load | Loaded 914 rows into table 'dim_date'
+2026-07-11 00:45:19,596 | INFO     | src.load | Loaded 32718 rows into table 'fact_sales'
+2026-07-11 00:45:19,644 | INFO     | src.load | Load complete. Warehouse written to data/warehouse/sales_warehouse.db
+2026-07-11 00:45:19,697 | INFO     | matplotlib.category | Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-07-11 00:45:19,699 | INFO     | matplotlib.category | Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-07-11 00:45:19,855 | INFO     | src.report | Reports written to reports
+2026-07-11 00:45:19,856 | INFO     | pipeline | === Pipeline run completed successfully in 2.07s ===

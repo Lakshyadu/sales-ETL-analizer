@@ -1,0 +1,23 @@
+pipeline:
+  name: "adventureworks_sales_pipeline"
+
+source:
+  type: "csv"
+  # In production this would be an API/DB/blob endpoint. Kept as a URL so
+  # extract.py demonstrates a real network extraction step with retries.
+  url: "https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/sales.csv"
+  local_fallback: "data/raw/sales_raw.csv"
+
+paths:
+  raw_dir: "data/raw"
+  warehouse_db: "data/warehouse/sales_warehouse.db"
+  reports_dir: "reports"
+  logs_dir: "logs"
+
+load:
+  mode: "full_refresh"   # full_refresh | incremental
+  chunksize: 5000
+
+quality_checks:
+  max_null_fraction: 0.0
+  min_row_count: 1000
